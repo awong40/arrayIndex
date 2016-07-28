@@ -1,0 +1,15 @@
+#written in Python 2.7
+
+def solution(A):
+    total = sum(A)
+
+    for i in range(len(A)):
+        right = A[i+1:]
+        # left = li[:i]
+        rsum = sum(right)
+        lsum = total - A[i] - rsum
+
+        if lsum == rsum:
+            return i
+    return -1
+    pass
